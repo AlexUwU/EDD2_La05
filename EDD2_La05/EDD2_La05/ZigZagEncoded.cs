@@ -43,5 +43,56 @@ namespace EDD2_La05
             }
             return resultado;
         }
+
+        private List<char> ListaCaracteresTotales()
+        {
+            List<char> lista = new List<char>();
+            char[] caracteres = Texto.ToCharArray();
+
+            for (int i = 0; i < TamañoTexto(); i++)
+            {
+                lista.Add(caracteres[i]);
+            }
+
+            return lista;
+        }
+
+
+        public List<List<char>> ListasCifrado()
+        {
+            List<List<char>> ListasOlas = new List<List<char>>();
+            char[] TamañoText = Texto.ToCharArray();
+            char res = ' ';
+            List<char> Temporal = ListaCaracteresTotales();
+            for (int i = 0; i <= NumeroOlas(); i++)
+            { 
+                List<char> ListaPrueba = new List<char>();
+
+                if (Temporal != null)
+                {
+                    for (int j = 0; j < TamañoOla(); j++)
+                    {
+                        res = Temporal.Remove(0);
+                        ListaPrueba.Add(res);
+                        if (Temporal == null)
+                        {
+                            int tamaño = TamañoOla() - ListaPrueba.();
+                            for (int h = 0; h < tamaño; h++)
+                            {
+                                ListaPrueba.Add('|');
+
+                            }
+                            j = TamañoOla() + 1;
+                        }
+                    }
+                    ListasOlas.Add(ListaPrueba);
+                }
+                else
+                {
+                    ListaPrueba.Add('1');
+                }
+            }
+            return ListasOlas;
+        }
     }
 }
