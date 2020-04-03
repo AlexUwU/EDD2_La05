@@ -35,6 +35,10 @@ namespace EDD2_La05
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+            }
 
             app.UseHttpsRedirection();
 
@@ -42,9 +46,14 @@ namespace EDD2_La05
 
             app.UseAuthorization();
 
+            app.UseStaticFiles();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+            app.Run(async (context) => {
+                await context.Response.WriteAsync("Could not Find Anything");
             });
         }
     }
