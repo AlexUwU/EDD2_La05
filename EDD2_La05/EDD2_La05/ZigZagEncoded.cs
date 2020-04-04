@@ -20,7 +20,7 @@ namespace EDD2_La05
             resultado = (niveles * 2) - 2;
             return resultado;
         }
-        //devuelva la cantidad de olas que existen
+        
         private int NumeroOlas()
         {
             int resultado = 0;
@@ -43,7 +43,6 @@ namespace EDD2_La05
             }
             return resultado;
         }
-
         private List<char> ListaCaracteresTotales()
         {
             List<char> lista = new List<char>();
@@ -56,8 +55,6 @@ namespace EDD2_La05
 
             return lista;
         }
-
-
         public List<List<char>> ListasCifrado()
         {
             List<List<char>> ListasOlas = new List<List<char>>();
@@ -94,5 +91,54 @@ namespace EDD2_La05
             }
             return ListasOlas;
         }
+
+        public string Cifrado()
+        {
+
+            string cifrado = "";
+            List<List<char>> temporal = ListasCifrado();
+
+            int ultimo = 0;
+            ultimo = TamañoOla() - 3;
+            for (int i = 0; i <= ListasCifrado().ElementAt(0).Count() - 1; i++)
+            {
+
+                for (int j = 0; j <= NumeroOlas(); j++)
+                {
+
+                    if (j == 0 && i == 0)
+                    {
+                        for (int x = 0; x <= NumeroOlas(); x++)
+                        {
+
+                            cifrado = cifrado + temporal.ElementAt(x).ElementAt(i).ToString();
+                            temporal.ElementAt(x).RemoveAt(i);
+
+                        }
+                     
+                    }
+
+                    
+                    if ((temporal.ElementAt(j).Count() - 1) >= 0)
+                    {
+                        cifrado = cifrado + temporal.ElementAt(j).ElementAt(0).ToString();
+                        temporal.ElementAt(j).RemoveAt(0);
+                    }
+                    if ((temporal.ElementAt(j).Count() - 1) > 0)
+                    {
+                        cifrado = cifrado + temporal.ElementAt(j).ElementAt(temporal.ElementAt(j).Count() - 1).ToString();
+                        temporal.ElementAt(j).RemoveAt(temporal.ElementAt(j).Count() - 1).ToString();
+                    }
+
+
+                }
+
+            }
+
+            return cifrado;
+        }
+
+
+
     }
 }

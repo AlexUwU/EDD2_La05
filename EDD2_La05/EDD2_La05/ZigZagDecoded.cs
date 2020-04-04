@@ -7,5 +7,6 @@ namespace EDD2_La05
 {
     public class ZigZagDecoded
     {
+
     }
 }
