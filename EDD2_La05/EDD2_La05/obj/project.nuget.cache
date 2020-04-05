@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q0tQdI6D3GBln5x42bjesHuQhom+tFWAaSWDSEolGS1ro8lmAQ/E5lL1x2ZYtq52d/75USy2KC5HtBGoxD5dvA==",
+  "dgSpecHash": "A9pYuXc361/0b5XV7au8DF5RqmuOw5+8WgBREHvEnotvcZIWOazhFhy0Zvg8MNolInzMTYYCB4tje7wx6xnJmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rodrigo\\Desktop\\Universidad\\1Ciclo2020\\ED2_LAB5\\EDD2_La05\\EDD2_La05\\EDD2_La05\\EDD2_La05.csproj",
+  "projectFilePath": "C:\\Users\\Rodrigo\\Desktop\\Universidad\\1Ciclo2020\\Laboratorios\\ED2_LAB5\\EDD2_La05\\EDD2_La05\\EDD2_La05\\EDD2_La05.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

@@ -7,7 +7,7 @@ namespace EDD2_La05
 {
     public class ZigZagEncoded
     {
-        public void ZigZag(int niveles, string texto)
+        public ZigZagEncoded(int niveles, string texto)
         {
             this.niveles = niveles;
             Texto = texto;
@@ -65,15 +65,17 @@ namespace EDD2_La05
             { 
                 List<char> ListaPrueba = new List<char>();
 
-                if (Temporal != null)
+                if (Temporal.Count()!=0)
                 {
                     for (int j = 0; j < TamañoOla(); j++)
                     {
-                        res = Temporal.Remove(0);
+                        
+                        res = Temporal.ElementAt(0);
+                        Temporal.RemoveAt(0);
                         ListaPrueba.Add(res);
-                        if (Temporal == null)
+                        if (Temporal.Count() == 0)
                         {
-                            int tamaño = TamañoOla() - ListaPrueba.();
+                            int tamaño = TamañoOla() - ListaPrueba.Count();
                             for (int h = 0; h < tamaño; h++)
                             {
                                 ListaPrueba.Add('|');
@@ -115,10 +117,10 @@ namespace EDD2_La05
                             temporal.ElementAt(x).RemoveAt(i);
 
                         }
-                     
+
                     }
 
-                    
+
                     if ((temporal.ElementAt(j).Count() - 1) >= 0)
                     {
                         cifrado = cifrado + temporal.ElementAt(j).ElementAt(0).ToString();
@@ -127,18 +129,15 @@ namespace EDD2_La05
                     if ((temporal.ElementAt(j).Count() - 1) > 0)
                     {
                         cifrado = cifrado + temporal.ElementAt(j).ElementAt(temporal.ElementAt(j).Count() - 1).ToString();
-                        temporal.ElementAt(j).RemoveAt(temporal.ElementAt(j).Count() - 1).ToString();
+                        temporal.ElementAt(j).RemoveAt(temporal.ElementAt(j).Count() - 1);
                     }
 
 
                 }
 
             }
-
+            int a = 0;
             return cifrado;
         }
-
-
-
     }
 }

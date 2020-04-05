@@ -107,5 +107,65 @@ namespace EDD2_La05
             return ListasOlas;
         }
 
+        public String Descifrado()
+        {
+
+            String descifrado = "";
+            List<List<char>> temporal = ListaDescifrado();
+
+            int comienzo = 0;
+            int ultimo = 0;
+
+            int tamaño = temporal.ElementAt(0).Count() - 1;
+
+            tamaño = niveles;
+            for (int i = 0; i < 1; i++)
+            {
+
+                if (comienzo == 1)
+                {
+                    tamaño++;
+                }
+
+                for (int r = 0; r < NumeroOlas(); r++)
+                {
+
+                    for (int j = comienzo; j < tamaño; j++)
+                    {
+                        descifrado = descifrado + temporal.ElementAt(j).ElementAt(0).ToString();
+                        temporal.ElementAt(j).RemoveAt(0);
+                        ultimo = j;
+                    }
+                    if (i == 0)
+                    {
+                        ultimo = ultimo - 1;
+                    }
+                    for (int x = ultimo; x >= 0; x--)
+                    {
+
+                        if (temporal.ElementAt(x).Count() != 0)
+                        {
+                            descifrado = descifrado + temporal.ElementAt(x).ElementAt(0).ToString();
+                            temporal.ElementAt(x).RemoveAt(0);
+                            if (temporal.ElementAt(x).Count() == 0)
+                            {
+                                x = x - 1;
+                            }
+
+                        }
+                        else
+                        {
+                            x = x - 1;
+                        }
+                    }
+                    comienzo = 0;
+                    comienzo = comienzo + 1;
+
+                }
+
+            }
+
+            return descifrado;
+        }
     }
 }
