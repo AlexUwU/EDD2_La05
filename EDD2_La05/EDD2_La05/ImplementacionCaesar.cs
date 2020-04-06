@@ -32,6 +32,7 @@ namespace EDD2_La05
             string texto = System.IO.File.ReadAllText(@path);
             Caesar descifrado = new Caesar(palabra, texto);
             string txtdescifrado = descifrado.Descifrado();
+            txtdescifrado.Replace("ascii 197", "");
 
             root = root + @"\\Upload\\descifradoCaesar.txt";
             using (StreamWriter outputFile = new StreamWriter(root))

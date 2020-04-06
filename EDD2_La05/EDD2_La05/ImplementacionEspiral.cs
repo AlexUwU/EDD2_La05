@@ -33,6 +33,7 @@ namespace EDD2_La05
             string texto = System.IO.File.ReadAllText(@path);
             RutaEspiral descifrado = new RutaEspiral(texto, tamaño);
             string txtdescifrado = descifrado.Descifrado();
+            txtdescifrado.Replace("ascii 197", "");
 
             root = root + @"\\Upload\\descifradoEspiral.txt";
             using (StreamWriter outputFile = new StreamWriter(root))

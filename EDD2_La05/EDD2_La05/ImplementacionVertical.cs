@@ -33,6 +33,7 @@ namespace EDD2_La05
             string texto = System.IO.File.ReadAllText(@path);
             RutaVertical descifrado = new RutaVertical(texto, tamaño);
             string txtdescifrado = descifrado.Descifrado();
+            txtdescifrado.Replace("ascii 197", "");
 
             root = root + @"\\Upload\\descifradoRuta.txt";
             using (StreamWriter outputFile = new StreamWriter(root))
